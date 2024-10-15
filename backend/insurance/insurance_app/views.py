@@ -73,7 +73,7 @@ def generate_and_verify_zkproof(request, company_id):
 					"validation_output": validate_result.stdout,
 					"price": price
 				})
-				companies.calculate_price(price)
+				companies.companies[company_id].calculated_price = price
 				return render(request, "Insurance_offer.html", {
         				'company_id': company_id,
         				'company': companies.companies[company_id],
