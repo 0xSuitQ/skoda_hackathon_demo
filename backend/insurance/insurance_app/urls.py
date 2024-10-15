@@ -5,7 +5,7 @@ from .views import generate_and_verify_zkproof, insurance_offer
 
 
 urlpatterns = [
-    path('generate_and_verify_zkproof/', generate_and_verify_zkproof, name='generate_and_verify_zkproof'),
+    path('generate_and_verify_zkproof/<int:company_id>/', generate_and_verify_zkproof, name='generate_and_verify_zkproof'),
     path('insurance-offer/<int:company_id>/', insurance_offer, name='insurance_offer'),
 
 ]

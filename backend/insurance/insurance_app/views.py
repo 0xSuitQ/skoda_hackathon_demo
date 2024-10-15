@@ -32,7 +32,7 @@ offers = [
 ]
 
 
-def generate_and_verify_zkproof(request):
+def generate_and_verify_zkproof(request, company_id):
 	if request.method == "GET":
 		try:
 
@@ -67,12 +67,22 @@ def generate_and_verify_zkproof(request):
 			
 			if validate_result.returncode == 0:
 				# Success: Return both generation and validation outputs, including the price
-				return JsonResponse({
+				output =  JsonResponse({
 					"status": "success", 
 					"generate_output": generation_output, 
 					"validation_output": validate_result.stdout,
 					"price": price
 				})
+				companies.calculate_price(price)
+				return render(request, "Insurance_offer.html", {
+        				'company_id': company_id,
+        				'company': companies.companies[company_id],
+        				'offers': offers,
+						'calc_price': price
+    				})
+
+
+
 			else:
 				return JsonResponse({"status": "error", "message": "ZKProof validation failed", "output": validate_result.stderr}, status=500)
 		
@@ -97,5 +107,6 @@ def insurance_offer(request, company_id):
     return render(request, "Insurance_offer.html", {
         'company_id': company_id,
         'company': companies.companies[company_id],
-        'offers': offers
+        'offers': offers,
+		'calc_price': (companies.companies[company_id].calculated_price)
     })
