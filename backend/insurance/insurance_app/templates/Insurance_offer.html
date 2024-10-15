@@ -1,0 +1,32 @@
+{% extends "partials/base.html" %}
+{% include "partials/offer_card.html" %}
+
+
+{% block title %} 
+Skoda Insurace
+{% endblock %}
+
+{% block inspect_default %}
+
+    <!-- Main container -->
+    <div class="container-md">
+
+        <!-- Main heading -->
+        <h1> {{company.title}}</h1>
+
+        <!-- Explanation of the packages -->
+        <p class="package-explanation">
+            We offer flexible insurance packages to suit all your needs. Whether you want basic coverage or full protection, we have the perfect plan for you.
+        </p>
+        <div class="d-flex justify-content-center align-items-center pb-4">
+
+            <a href="{% url 'generate_and_verify_zkproof' %}" class="btn btn-success">Generate and Verify ZK Proof</a>
+        </div>
+
+        {% for offer in offers  %}
+            {% include "partials/offer_card.html" with offer=offer %}
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

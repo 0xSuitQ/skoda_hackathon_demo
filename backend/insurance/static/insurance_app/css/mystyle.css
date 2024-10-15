@@ -1,0 +1,82 @@
+.digital-manual {
+  background-color: rgb(241, 241, 241);
+}
+
+.skoda-box {
+    background-color: #c1c1c1fd;
+    border-radius: 2px;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skoda-box-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.skoda-box-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.skoda-box-description {
+    font-size: 14px;
+    color: #666666;
+}
+
+.skoda-header {
+            background-color: #00473d;
+            padding: 20px;
+            text-align: center;
+}
+
+.skoda-logo {
+            color: #9deccf;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 5px;
+}
+
+@media (max-width: 768px) {
+    .responsive-heading {
+        font-size: 1.5rem !important;  /* Adjust this value as needed */
+    }
+
+    .responsive-title {
+        font-size: 1.4rem !important;  
+    }
+    
+    .responsive-text {
+        font-size: 1.0rem !important;  /* Adjust this value as needed */
+    }
+    
+    .responsive-button {
+        font-size: 0.8rem !important;
+        padding: 0.375rem 0.75rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .responsive-heading {
+        font-size: 1.1rem !important;  
+    }
+
+    .responsive-title {
+        font-size: 1.3rem !important;  
+    }
+    
+    .responsive-text {
+        font-size: 0.9rem !important;
+    }
+    
+    .responsive-button {
+        font-size: 0.9rem !important;
+        padding: 0.25rem 0.5rem !important;
+    }
+}

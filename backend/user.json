@@ -1,0 +1,10 @@
+{
+    "overall_average_travel_time_in_min": 50,
+    "overall_average_fuel_consumption": 17,
+    "overall_average_electric_consumption": 20,
+    "overall_average_speed_in_kmph": 85,
+    "total_distance_traveled": 901,
+    "number_of_hard_brakes_per_1000km": 2,
+    "number_of_rash_drives_per_1000km": 4,
+    "ins_tear" : 2
+}

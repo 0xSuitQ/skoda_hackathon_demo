@@ -1,0 +1,31 @@
+{% extends "partials/base.html" %}
+
+
+
+{% block title %} 
+Skoda Insurance
+{% endblock %}
+
+{% block inspect_default %}
+
+ <!-- `<div class="container-fluid skoda-header">
+        <h1 class="skoda-logo responsive-heading">SKODA Insurance</h1>
+    </div> -->
+
+	<div class="container-md pt-2">
+		<div class="container-md p-2">
+		<h1> Settings </h1>
+		</div>
+    		<div class="row row-cols-1 row-cols-md-3 g-4 pt-4">
+				{% for company in companies %}
+					{{ company_card(company) }}
+				{% endfor %}
+			</div>
+			<div class=" container-md skoda-box">
+				    <div class="container-md skoda-box-content">
+				        <h2 class="responsive-heading">Profile Settings</h2>
+				    </div>
+			</div>
+	</div>
+
+{% endblock %}

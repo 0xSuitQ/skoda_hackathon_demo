@@ -1,0 +1,20 @@
+<div class="col">
+    <div class="card h-100">
+        <div class="card-body">
+            <h5 class="card-title responsive-heading" style="background-color: #1e9b3b; color: white; padding: 10px; border-radius: 5px;">
+                {{ company.title }}
+            </h5>
+            <p class="card-text responsive-text">
+                <strong>Insurance types:</strong> {{ company.insurance_types }}
+            </p>
+            <a href="{% url 'insurance_offer' company.id %}" class="btn btn-secondary">
+            Get Insurance Offer
+            </a>
+        </div>
+        <div class="card-footer">
+            <small class="text-body-secondary">
+                {{ company.description }}
+            </small>
+        </div>
+    </div>
+</div>

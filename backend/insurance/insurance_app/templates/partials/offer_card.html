@@ -1,0 +1,13 @@
+        <div class="card">
+			{% if user.user_insurance_id is not none %}
+            <div class="discount-badge">42% OFF</div>
+			{% endif %}
+
+            <h3>{{ offer.title }} </h3>
+            <p> {{ offer.description }}.</p>
+
+			{% if user.user_insurance_id is not none %}
+            <p class="price">Now: ${{company.calculated_price}}/month <span class="old-price">${{company.price}}/month</span></p>
+            {% endif %}
+            <a href="#" class="buy-now-btn">Buy Now</a>
+        </div>
